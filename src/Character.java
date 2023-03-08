@@ -1,3 +1,5 @@
+package src;
+
 import com.sun.jdi.PathSearchingVirtualMachine;
 
 public class Character {
