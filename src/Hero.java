@@ -1,16 +1,14 @@
 package src;
 
-public class Hero {
-    private int level;
-    private int experience;
-    private float money;
-//    Inventory: src.Item[5]
+public class Hero extends Character {
+    private int level = 1;
+    private int experience = 0;
+    private float money = 0.0f;
+    private Item[] inventory = new Item[5];
 
-    public void Hero(int level, int experience, float money) {
-        this.level = 1;
-        this.experience = 0;
-        this.money = 0.0F;
+    public Hero(String name, double health, double attackPower, boolean isAlive){
+        super("Fjords of Capybaras", health, attackPower, isAlive);
+        // Then add one Potion to the inventory (i.e. newItem('Potion',20))
     }
-    // Then add one Potion to the inventory (i.e. new src.Item('Potion', 20))
 
 }
