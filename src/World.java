@@ -12,7 +12,7 @@ public class World {
         this.gameName = gameName;
         this.publisher = publisher;
     }
-    // Getters + Setters
+    // Getters and setters
     public String getGameName() {
         return gameName;
     }
