@@ -23,7 +23,7 @@ public class Character {
         this.isAlive = isAlive;
     }
 
-    //getter and setters
+    //Getters and setters
     public String getName() {
         return name;
     }
@@ -54,5 +54,23 @@ public class Character {
 
     public void setAlive(boolean alive) {
         isAlive = alive;
+    }
+
+    //Methods
+    public String info() {
+        return "Name: " + name + "\nHealth: " + healingPower + "\nAttack Power:" + attackPower + "\nIs Alive" + isAlive;
+    }
+
+    public boolean runAway() {
+        double rand = Math.random();
+        int rand_int = (int) (rand * 100);
+
+        if (rand_int < 50) {
+            System.out.println("Could not run away!");
+            return false;
+        } else {
+            System.out.println("Was able to run away!");
+            return true;
+        }
     }
 }
