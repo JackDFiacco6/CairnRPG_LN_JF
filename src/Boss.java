@@ -10,8 +10,8 @@ public class Boss extends Enemy{
     // Fight
     public boolean fight(Hero hero) {
         double stamina = Math.random();
-        if (randomValue < 0.5 || magicPoints >= 30) {
-            attackPower = this.getAttackPower() * 4;
+        if (randomValue < 0.5 || ultrasLeft >= 1) {
+            attackPower = this.getAttackPower() * 8;
         } else {
             attackPower = this.getAttackPower();
         }
