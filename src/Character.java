@@ -5,12 +5,12 @@ import com.sun.jdi.PathSearchingVirtualMachine;
 public class Character {
     public String name;
     public double attackPower;
-    public double healingPower;
+    public double health;
     public boolean isAlive;
 
     Character() {
         name = "Capi";
-        healingPower = 100;
+        health = 100;
         attackPower = 80;
         isAlive = true;
     }
@@ -18,7 +18,7 @@ public class Character {
     //Constructor
     public Character(String name, double health, double attackPower, boolean isAlive) {
         this.name = name;
-        this.healingPower = health;
+        this.health = health;
         this.attackPower = attackPower;
         this.isAlive = isAlive;
     }
@@ -33,11 +33,11 @@ public class Character {
     }
 
     public double getHealth() {
-        return healingPower;
+        return health;
     }
 
     public void setHealth(double health) {
-        this.healingPower = health;
+        this.health = health;
     }
 
     public double getAttackPower() {
@@ -58,18 +58,18 @@ public class Character {
 
     //Methods
     public String info() {
-        return "Name: " + name + "\nHealth: " + healingPower + "\nAttack Power:" + attackPower + "\nIs Alive" + isAlive;
+        return "Name: " + name + "\nHealth: " + health + "\nAttack Power:" + attackPower + "\nIs Alive" + isAlive;
     }
 
     public boolean runAway() {
         double rand = Math.random();
         int rand_int = (int) (rand * 100);
 
-        if (rand_int < 50) {
-            System.out.println("Could not run away!");
+        if (rand_int < 75) {
+            System.out.println("Your tried to run away, but could not escape!");
             return false;
         } else {
-            System.out.println("Was able to run away!");
+            System.out.println("You were able to run away!");
             return true;
         }
     }
