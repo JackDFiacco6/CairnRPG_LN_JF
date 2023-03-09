@@ -32,7 +32,7 @@ public class Enemy extends Character {
             return magicPoints;
     }
 
-    public void setMagicPoints(){
+    public void setMagicPoints(int i){
         this.magicPoints = magicPoints;
     }
 
