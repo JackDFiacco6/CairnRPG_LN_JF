@@ -11,7 +11,13 @@ public class Enemy extends Character {
         super(name, health, attackPower, isAlive);
     }
 
+public int getMagicPoints(){
+        return magicPoints;
+}
 
+    public void setMagicPoints(){
+        this.magicPoints = magicPoints;
+    }
 
     // Fight
     public boolean fight(Hero hero){
