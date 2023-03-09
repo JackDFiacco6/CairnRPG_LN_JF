@@ -6,6 +6,14 @@ public class Hero extends Character {
     private float money = 0.0f;
     private Item[] inventory = new Item[5];
 
+    // Constructors
+    public Hero(double health, double attackPower, boolean isAlive){
+        super("Mr. Capy", health, attackPower, isAlive);
+        // Then add one Potion to the inventory (i.e. newItem('Potion',20))
+        Item potion = new Item("Potion", 10)
+        this.inventory[0] = "Potion";
+    }
+
     // Methods
     public void fight(Enemy evil){
         double stamina = Math.random();
@@ -101,12 +109,6 @@ public class Hero extends Character {
 
     public void setInventory(Item[] inventory) {
         this.inventory = inventory;
-    }
-
-    // Constructors
-    public Hero(double health, double attackPower, boolean isAlive){
-        super(health, attackPower, isAlive);
-        // Then add one Potion to the inventory (i.e. newItem('Potion',20))
     }
 
 
