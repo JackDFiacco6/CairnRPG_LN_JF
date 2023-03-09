@@ -29,4 +29,7 @@ public class Item {
     public void setHealingPower(int healingPower) {
         this.healingPower = healingPower;
     }
+    public String Info(){
+        return "Item name: " + name + ", Healing Power: " + healingPower;
+    }
 }
