@@ -20,7 +20,7 @@ public class Hero extends Character {
         System.out.println("Damage caused: " + damage + " hp.");
     }
 
-    public int useItem(int item){
+    public int useItem(int item) {
         // use first item by adding to your health the amount of healing power it has
         // print to the console how much you were healed, the character name, and name of item
         // ex: A 'potion' healed Johnny by 15 hp
@@ -30,12 +30,14 @@ public class Hero extends Character {
                 System.out.println("A " + item + " healed " + name + " by" + Item.healingPower + " hp.");
                 break;
             }
+        }
     }
 
     public void levelUp(){
-        if (this.experience > 20) {
+        if (this.experience > 100) {
             this.level += 1;
-            System.out.println("Level up");
+            this.experience = 0;
+            System.out.println("Level up! Experience set back to: 0.");
         }
     }
 
