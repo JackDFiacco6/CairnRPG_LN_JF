@@ -5,14 +5,14 @@ public class World {
     private String publisher;
 
     World() {
-        gameName = "Forjd of Capybaras";
+        gameName = "Fjord of Capybara's";
         publisher = "";
     }
     public World (String gameName, String publisher) {
         this.gameName = gameName;
         this.publisher = publisher;
     }
-    // Getters + Setters
+    // Getters and setters
     public String getGameName() {
         return gameName;
     }
@@ -28,5 +28,4 @@ public class World {
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
-}
 }
