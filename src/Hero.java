@@ -55,6 +55,14 @@ public class Hero extends Character {
 
     public String showInventory() {
         // Return string displaying all items in inventory
+        String inventory_items = "";
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null) {
+                inventory_items += inventory[i].getName();
+            }
+        }
+        return inventory_items;
+
     }
 
     // Display hero's info
