@@ -10,8 +10,7 @@ public class Hero extends Character {
     public Hero(double health, double attackPower, boolean isAlive){
         super("Mr. Capy", health, attackPower, isAlive);
         // Then add one Potion to the inventory (i.e. newItem('Potion',20))
-        Item potion = new Item("Potion", 10)
-        this.inventory[0] = "Potion";
+        Item potion = new Item("Potion", 10);
     }
 
     // Methods

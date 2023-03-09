@@ -8,13 +8,17 @@ public class Boss extends Enemy{
     }
 
     // Fight
-    public boolean fight(Hero hero) {
+    public void fight(Hero hero){
         double stamina = Math.random();
-        if (randomValue < 0.5 || ultrasLeft >= 1) {
-            attackPower = this.getAttackPower() * 8;
+        double damage = attackPower;
+        if (stamina < 0.5) {
+            attackPower = this.getAttackPower() * 2;
+        } else if (stamina < 0.9) {
+            attackPower = this.getAttackPower() * 3;
         } else {
             attackPower = this.getAttackPower();
         }
+        System.out.println("Damage caused: " + damage + " hp.");
     }
 
     // Getters and Setters
