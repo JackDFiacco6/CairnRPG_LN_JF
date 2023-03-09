@@ -55,6 +55,7 @@ public class Hero extends Character {
         return item;
     }
 
+    // Methods
     public boolean levelUp(){
 
     }
