@@ -26,4 +26,13 @@ public class Boss extends Enemy{
         this.ultrasLeft = ultrasLeft;
     }
 
+    // Display Boss info
+    public String info() {
+        return "Name: " + this.name + "\n" +
+                "Health: " + this.health +
+                "\nAttack Power:" + attackPower +
+                "\nIs Alive:" + isAlive +
+                "\nUltras left :" + ultrasLeft;
+    }
+
 }
