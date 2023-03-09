@@ -42,11 +42,19 @@ public class Hero extends Character {
     }
 
     public boolean addToInventory(Item item) {
-        // Add to inventory
+        // Add item to first empty spot in inventory
+        // Return false is inventory is full
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] == null) {
+                inventory[i] = item;
+                return true;
+            }
+        }
+        return false;
     }
 
     public String showInventory() {
-        // Show inventory
+        // Return string displaying all items in inventory
     }
 
     // Display hero's info
