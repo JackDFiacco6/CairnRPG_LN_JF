@@ -1,9 +1,29 @@
 package src;
 
-public class Boss {
+public class Boss extends Enemy{
     private int ultrasLeft;
     public Boss (double health, double attackPower, boolean isAlive) {
         super("Capy Boss", health, attackPower, isAlive);
         this.ultrasLeft = 3;
     }
+
+    // Fight
+    public boolean fight(Hero hero) {
+        double stamina = Math.random();
+        if (randomValue < 0.5 || magicPoints >= 30) {
+            attackPower = this.getAttackPower() * 4;
+        } else {
+            attackPower = this.getAttackPower();
+        }
+    }
+
+    // Getters and Setters
+    public int getUltrasLeft () {
+        return ultrasLeft;
+    }
+
+    public void setUltrasLeft (int ultrasLeft){
+        this.ultrasLeft = ultrasLeft;
+    }
+
 }
