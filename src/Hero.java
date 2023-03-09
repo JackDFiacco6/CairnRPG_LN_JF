@@ -20,11 +20,16 @@ public class Hero extends Character {
         System.out.println("Damage caused: " + damage + " hp.");
     }
 
-    public int useItem(int i){
+    public int useItem(int item){
         // use first item by adding to your health the amount of healing power it has
-        //print to the console how much you were healed, the character name, and name of item
+        // print to the console how much you were healed, the character name, and name of item
         // ex: A 'potion' healed Johnny by 15 hp
-        System.out.println("A " + i + " healed " + name + " by" + Item.healingPower + " hp.");
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null) {
+                health += inventory[i].HealingPower();
+                System.out.println("A " + item + " healed " + name + " by" + Item.healingPower + " hp.");
+                break;
+            }
     }
 
     public void levelUp(){
