@@ -8,13 +8,74 @@ public class Hero extends Character {
 
     // Constructors
     public Hero(double health, double attackPower, boolean isAlive){
-        super(health, attackPower, isAlive);
+        super("Mr. Capy", health, attackPower, isAlive);
         // Then add one Potion to the inventory (i.e. newItem('Potion',20))
+        Item potion = new Item("Potion", 10)
+        this.inventory[0] = "Potion";
     }
 
-    public boolean fight(Enemy evil){
-        // Decide between using a basic attack that uses attackPower or special attack
-        // Then print to console how much damage
+    // Methods
+    public void fight(Enemy evil){
+        double stamina = Math.random();
+        double damage = attackPower;
+        if (stamina < 0.5) {
+            attackPower = this.getAttackPower() * 2;
+        } else if (stamina < 0.9) {
+            attackPower = this.getAttackPower() * 3;
+        } else {
+            attackPower = this.getAttackPower();
+        }
+        System.out.println("Damage caused: " + damage + " hp.");
+    }
+
+    public int useItem(int item) {
+        // use first item by adding to your health the amount of healing power it has
+        // print to the console how much you were healed, the character name, and name of item
+        // ex: A 'potion' healed Johnny by 15 hp
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null) {
+                health += inventory[i].HealingPower();
+                System.out.println("A " + item + " healed " + name + " by" + Item.healingPower + " hp.");
+                break;
+            }
+        }
+    }
+
+    public void levelUp(){
+        if (this.experience > 100) {
+            this.level += 1;
+            this.experience = 0;
+            System.out.println("Level up! Experience set back to: 0.");
+        }
+    }
+
+    public boolean addToInventory(Item item) {
+        // Add item to first empty spot in inventory
+        // Return false is inventory is full
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] == null) {
+                inventory[i] = item;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String showInventory() {
+        // Return string displaying all items in inventory
+        String inventory_items = "";
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null) {
+                inventory_items += inventory[i].getName();
+            }
+        }
+        return inventory_items;
+
+    }
+
+    // Display hero's info
+    public String info() {
+        return "Name: " + this.name + "\nHealth: " + this.health + "\nAttack Power:" + attackPower + "\nIs Alive" + isAlive + "Money: " + this.money + "\nExperience: " + this.experience + "\nLevel:" + level + "\ninventory:" + inventory.toString();
     }
 
     // Getters and setters
@@ -50,14 +111,5 @@ public class Hero extends Character {
         this.inventory = inventory;
     }
 
-    public int useItem(int item){
-        System.out.println("Used" + item);
-        return item;
-    }
-
-    // Methods
-    public boolean levelUp(){
-
-    }
 
 }
