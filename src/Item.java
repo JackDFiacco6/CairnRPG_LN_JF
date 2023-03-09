@@ -13,4 +13,20 @@ public class Item {
         this.name = name;
         this.healingPower = healingPower;
     }
+    //Getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getHealingPower() {
+        return healingPower;
+    }
+
+    public void setHealingPower(int healingPower) {
+        this.healingPower = healingPower;
+    }
 }
